@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: tic-tac-game
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: tic-tac-game
+  template:
+    metadata:
+      labels:
+        app: tic-tac-game
+    spec:
+      containers:
+      - name: tic-tac-game
+        image: tic-tac-game
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 3000
